@@ -1,0 +1,11 @@
+FROM ubuntu
+RUN echo "subscribe technical channel" > /tmp/testfile
+
+
+
+FROM ubuntu
+WORKDIR /tmp
+RUN echo "like this channel" > /tmp/testfile
+ENV myname shivaniballa
+COPY testfile1 /tmp
+ADD test.tar.gz /tmp

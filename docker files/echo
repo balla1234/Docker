@@ -1,0 +1,10 @@
+FROM ubuntu:14.04
+MAINTAINER shivani
+RUN apt-get update
+CMD ["echo","This is the vertex technosys"]     #docker run myimage:1 (shows in fronted in server)
+OR
+CMD ["ping","www.google.com"]         #docker run myimage:1 (shows in fronted in server)
+OR
+
+ENTRYPOINT ["ping"]
+CMD ["www.google.com"]

@@ -1,0 +1,4 @@
+Docker volume
+
+FROM ubuntu
+VOLUME ["/myvolume"]

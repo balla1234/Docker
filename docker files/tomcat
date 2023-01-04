@@ -1,0 +1,31 @@
+FROM tomcat:8.5.37-jre8
+MAINTAINER shivani
+RUN apt-get update
+EXPOSE 8080               #imageport
+CMD ["catalin.sh","run"]     #tomcat run in background
+
+
+FROM tomcat:8.5.37-jre8
+MAINTAINER shivani
+RUN apt-get update
+COPY https://get.jenkins.io/war-stable/2.361.3/jenkins.war   /usr/local/tomcat/webapps   #file is saved in server
+EXPOSE 8080               #imageport
+CMD ["catalina.sh", "run"]     #tomcat run in background
+
+
+
+FROM tomcat:8.5.37-jre8
+MAINTAINER shivani
+RUN apt-get update
+ADD https://s3.us-east-2.amazonaws.com/myjavabucket.0/mahaLogin-5.0.war  /usr/local/tomcat/webapps   #file is saved in server
+EXPOSE 8080               #imageport
+CMD ["catalina.sh", "run"]     #tomcat run in background
+
+
+FROM tomcat:8.5.37-jre8
+MAINTAINER shivani
+RUN apt-get update
+ADD https://s3.us-east-2.amazonaws.com/myjavabucket.0/mahaLogin-5.0.war  /usr/local/tomcat/webapps
+WORKDIR /usr/local/tomcat/webapps
+EXPOSE 8080               
+CMD ["catalina.sh", "run"]     
